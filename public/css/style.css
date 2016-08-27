@@ -8,8 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, light, red, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, custom-colors, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
 */
 @import url('960.css'); /* GPL License v3 and MIT License */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700&v2'); /* Apache License v2 */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic&v2'); /* Apache License v2 */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700&v2|Open+Sans+Condensed:300,300italic&v2'); /* Apache License v2 */
 
 /* Common elements */
 * {

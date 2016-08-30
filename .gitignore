@@ -2,3 +2,5 @@
 Thumbs.db
 .idea/
 **/node_modules/**
+**/npm-debug.log/**
+server-side/Church Tools-57d50b5b341e.json

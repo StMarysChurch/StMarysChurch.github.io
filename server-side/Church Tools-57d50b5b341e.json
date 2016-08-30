@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "church-tools",
+  "private_key_id": "57d50b5b341ea5939dab4593b4ce7d59ac963dc3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEwAIBADANBgkqhkiG9w0BAQEFAASCBKowggSmAgEAAoIBAQCzpnk5hLJlqLJd\nQFDQDJA66anmM2w+GhKtG3mSyR7SgrhxYea0mlA8FOYPWFg040XO62Jr+1c6lAiV\nkyu4afmqSpzoPmFsqVGfyv8pSA65vM/oHbbR7V21nSwvGmP9JdumPeiRhnQMxTMn\n7jlGEm60HV4KSR2rTNFwvunyOR26b66XLtKPuSedM3wA/axYXY3wDmCaI9JZ+yqU\n8zwdA7F9hMK0ikrRz1ZD8bJL8IVGIVE8mn9xqgVvrzglSRcQDsXTR0J2GCyjdFNV\nrzMNGD7iahCoOEkqXUSWH6hHaXidRzBQZT9KoRwmbUb/CG5b6da8b/LcVMej6uDV\nb2C4ko5VAgMBAAECggEBAK1g36OsNkO4QJOQq61uQpAozEiXnkJ9BUM9veH06iM9\n92Wtl2r7dq3VeYabu10nbkrZjr4p7rBhB7vbMhmjZUl9Att8wKeO7XCrCAC+Qz/s\nQjaA3tzRGVxaWLcI4DEDJW3WV6qCuWNNuiYyWeIPjfmUUhrZH6If3A3UopGbn945\npm4Wq1Lo4o4BaJleTQawJrjcJ12DmHtwz3hob4l70gKfULto+ew7y//2H4Av7co7\n+3EozP6P9xUWe4/xwkXv6LucJJenlZcxMZgRzCS5U0AE2OarAPNlaHAasDPPi6gB\n46DOuDrFpmkBjD3jVC0lvFD9J8aHLyYA7lxDzq3pbs0CgYEA3mSFc8BL/wZhb4zW\nHK3Dkx0o40b2DmufGPS88h2MJsQ2C5WxksxnIITmWDLYPYrHVU+XZ/gcZ+u8LJww\nbQJoGPTMnOOg0b961mc8h07pBiPbwTsFcVyGir5Xko/HvvWOc/g7THgXJccAqR9t\nNWJVcYVdyIxTlaR1mCk38rZ7bOcCgYEAzsxr5j27X9/TR9sM5AIWXaCN4GadcJbH\nXT+TD9kPD9kkzVSIoTRc+ioAwPSserSQlQFsMDYtwomjTHa2GUq3AyW8WVOE1Qt5\nlYCxyWFvKPhJ+grlwYVe+Cbp5G7YvrZY2RY9q/w3abpNh+sHtRG2EInhe6Pecd/r\nc/vyi65152MCgYEA3JnX6y8X83xv0Ihip4YSV274bSKp1zoYUlgKyRxYNugxOCKg\nR57suUw7dcfRypJMEqrl5GMwQkGLorC4NJnLit3hzcrabtVC00UKvKmg6s9NIIsc\nZgvDBgOzuJVZLWpFiXH12G/Tfky9sgWTff3yBa6mjdXs36aIY4yXi/JJ0ocCgYEA\nidodJysJh9ylc+Xiju+RRzJqwSbGVrI8Db3+Y3cXIkJm1PU/6u4D+MMdI4M2oslR\nA/Mh0nWbRW4IzETqGKwEmXWDO6yABKCUmQNkAFESD6aLccHn7Hvildsi2SLHG0Jk\nsbmwvL/xlGobmroitiIrUpUHGStgclqJExTlVxWiBO8CgYEA1edgiPeFM2saqXX+\nfRyZDvv9BqMKz8hsA9Gc//P0bG1NFJZEsZNc4SxyPAxRialXtUZYSNxT6fsKyOUp\nj+76r4kOnwNQQr9VM8HtFbKSuXXP8uyazPVnQp7Jvaxeey2koIw4KPIwBaLSuQvd\n3r+5vBUtf1VhgHM+jGlbj94yI44=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-backend@church-tools.iam.gserviceaccount.com",
+  "client_id": "102830742808333373764",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-backend%40church-tools.iam.gserviceaccount.com"
+}

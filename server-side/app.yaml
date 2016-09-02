@@ -1,5 +1,11 @@
 runtime: nodejs
 vm: true
+handlers:
+- url: /.*
+  script: IGNORED
+  secure: always
 threadsafe: true
 manual_scaling:
   instances: 1
+skip_files:
+- ^node_modules$

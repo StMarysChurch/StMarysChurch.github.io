@@ -36,11 +36,11 @@ router.get("/", (req, res, next) => {
                     console.log("Rules have been deployed!")
                 }).catch((err) => {
                     // handle error
+                    console.log("We have an error")
                 });
             });
         });
     });
-    next();
 });
 
 module.exports = router;

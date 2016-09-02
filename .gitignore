@@ -3,6 +3,6 @@ Thumbs.db
 .idea/
 **/node_modules/**
 **/npm-debug.log/**
-server-side/Church Tools-57d50b5b341e.json
-public/index.html
-server-side/Church Tools-key.json
+server-side/deploy-token.json
+server-side/church-tools-key.json
+server-side/deploy/hosting/index.html

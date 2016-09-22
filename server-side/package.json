@@ -7,8 +7,8 @@
     "deploy": "gcloud app deploy"
   },
   "engines": {
-    "node": ">=6.5.0",
-    "npm": ">=3.10.3"
+    "node": ">=6.6.0",
+    "npm": ">=3.10.8"
   },
   "repository": {
     "type": "git",
@@ -21,19 +21,20 @@
   },
   "homepage": "https://github.com/StMarysChurch/StMarysChurch.github.io#readme",
   "dependencies": {
+    "google-cloud": "^0.40.0",
     "@google-cloud/storage": "^0.1.1",
-    "@google/cloud-debug": "^0.8.3",
+    "@google/cloud-debug": "^0.8.4",
     "@google/cloud-trace": "^0.5.7",
-    "body-parser": "~1.15.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.2.0",
-    "express": "~4.13.4",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.2.0",
+    "express": "^4.14.0",
     "express-winston": "^2.0.0",
-    "firebase": "^3.3.0",
+    "firebase": "^3.4.0",
     "firebase-tools": "^3.0.7",
-    "hbs": "~4.0.0",
-    "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.0",
+    "hbs": "^4.0.1",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.0",
     "winston": "^2.2.0"
   }
 }

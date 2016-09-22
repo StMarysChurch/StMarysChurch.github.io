@@ -1,10 +1,17 @@
-var express = require('express');
+// Activate Google Cloud Trace and Debug when in production
+if (process.env.NODE_ENV === 'production') {
+    require('@google/cloud-trace').start();
+    require('@google/cloud-debug');
+
+}
+
 var path = require('path');
+
+var express = require('express');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
+var logging = require('./lib/logging');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//var gcs = require("@google-cloud/storage")();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -17,7 +24,8 @@ app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /deploy
 //app.use(favicon(path.join(__dirname, 'deploy', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logging.requestLogger);
+app.use(logging.errorLogger);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
@@ -27,10 +35,8 @@ app.use('/', routes);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
-app.use((req, res, next) => {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+app.use((req, res) => {
+    res.status(404).send('Not Found');
 });
 
 // error handlers
@@ -55,6 +61,7 @@ app.use((err, req, res, next) => {
         message: err.message,
         error: {}
     });
+    logging.error("app.js ", err.message, err);
 });
 
 // Activate Google Cloud Trace and Debug when in production
@@ -62,19 +69,5 @@ if (process.env.NODE_ENV === 'production') {
     require('@google/cloud-trace').start();
     require('@google/cloud-debug');
 }
-
-// var secrets = gcs.bucket("church-tools.appspot.com");
-// var firebaseKey = secrets.bucket("secret/church-tools-key.json");
-// var deployKey = secrets.bucket("secret/deploy-token.json");
-// firebaseKey.download({
-//     destination: path.resolve(__dirname, "../church-tools-key.json")
-// }, function (err) {
-// });
-//
-// deployKey.download({
-//     destination: path.resolve(__dirname, "../deploy-token.json")
-//     /Users/roneythomas/code/StMarysChurch.github.io/server-side/deploy-token.json
-// }, function (err) {
-// });
 
 module.exports = app;

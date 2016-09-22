@@ -2,6 +2,6 @@
 Thumbs.db
 .idea/
 **/node_modules/**
-**/npm-debug.log/**
+**/npm-debug.log
 server-side/deploy/hosting/index.html
 server-side/key.json

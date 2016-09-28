@@ -11,5 +11,14 @@ resources:
   disk_size_gb: 10
 manual_scaling:
   instances: 1
+health_check:
+  enable_health_check: True
+  check_interval_sec: 60
+  timeout_sec: 8
+  unhealthy_threshold: 2
+  healthy_threshold: 2
+  restart_threshold: 4
+env_variables:
+  NODE_ENV: production
 skip_files:
 - ^node_modules$

@@ -8,18 +8,14 @@ var deployToken, serviceAccount, db;
 var logging = require(path.resolve(__dirname, "../lib/logging"));
 const fs = require("fs");
 
-var gcloud = require('google-cloud');
-
 if (process.env.NODE_ENV === 'production') {
-    var gcs = gcloud.storage({
-            keyFilename: path.resolve(__dirname, "../key.json"),
-            projectId: 'church-tools'
-        }
-    );
+    var gcs = require('@google-cloud/storage')({
+        projectId: process.env.GCLOUD_PROJECT
+    });
 } else {
-    var gcs = gcloud.storage({
+    var gcs = require('@google-cloud/storage')({
+        projectId: 'church-tools',
         keyFilename: path.resolve(__dirname, "../key.json"),
-        projectId: 'church-tools'
     });
 }
 
@@ -27,8 +23,8 @@ var secrets = gcs.bucket('church-tools.appspot.com');
 
 secrets.file('secret/church-tools-key.json').download((err, contents) => {
     if (!err) {
-        logging.info("app.js ", "deploy-token.json -- Success");
-        logging.info("app.js church-tools-key.json ", contents.toString());
+        logging.info("index.js ", "deploy-token.json -- Success");
+        logging.info("index.js church-tools-key.json ", contents.toString());
         serviceAccount = JSON.parse(contents.toString());
         firebase.initializeApp({
             databaseURL: "https://church-tools.firebaseio.com",
@@ -36,7 +32,7 @@ secrets.file('secret/church-tools-key.json').download((err, contents) => {
         });
         db = firebase.database();
     } else {
-        logging.error("app.js ", "deploy-token.json -- Error ", err);
+        logging.error("index.js ", "deploy-token.json -- Error ", err);
     }
 });
 secrets.file('secret/deploy-token.json').download((err, contents) => {
@@ -45,12 +41,16 @@ secrets.file('secret/deploy-token.json').download((err, contents) => {
         logging.info("app.js deploy-token.json ", contents.toString());
         deployToken = JSON.parse(contents.toString());
     } else {
-        logging.error("app.js ", "deploy-token.json -- Error ", err);
+        logging.error("index.js ", "deploy-token.json -- Error ", err);
     }
 });
 
-router.get("/", (req, res)=> {
+router.get("/", (req, res) => {
+    res.send("Welcome Home");
+});
 
+router.get("/_ah/health", (req, res) => {
+    res.sendStatus(200);
 });
 
 /* GET home page. */

@@ -64,10 +64,4 @@ app.use((err, req, res, next) => {
     logging.error("app.js ", err.message, err);
 });
 
-// Activate Google Cloud Trace and Debug when in production
-if (process.env.NODE_ENV === 'production') {
-    require('@google/cloud-trace').start();
-    require('@google/cloud-debug');
-}
-
 module.exports = app;

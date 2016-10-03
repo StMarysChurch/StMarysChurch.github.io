@@ -1,7 +1,8 @@
-Server Side
-========== 
+<p align="center">
+  <h1 align="center">Server Side</h1>
+  <p align="center">How to run backend?</p>
+</p>
 
-How to run backend?
 -----------
 
 1) Clone the repo.

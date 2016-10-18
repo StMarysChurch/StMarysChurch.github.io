@@ -1,27 +1,20 @@
 {
   "name": "server-side",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Backend code for Church website.",
+  "main": "bin/www",
+  "repository": {
+    "url": "https://github.com/StMarysChurch/StMarysChurch.github.io",
+    "type": "git"
+  },
+  "author": "Roney Thomas",
+  "license": "ISC",
   "scripts": {
     "start": "forever bin/www",
     "deploy": "gcloud app deploy"
   },
-  "engines": {
-    "node": ">=6.6.0",
-    "npm": ">=3.10.8"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/StMarysChurch/StMarysChurch.github.io.git"
-  },
-  "author": "RoneyThomas <roneythomas6@gmail.com> (https://roney.me)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/StMarysChurch/StMarysChurch.github.io/issues"
-  },
-  "homepage": "https://github.com/StMarysChurch/StMarysChurch.github.io#readme",
   "dependencies": {
-    "@google-cloud/storage": "^0.1.1",
+    "@google-cloud/storage": "^0.2.0",
     "@google/cloud-debug": "^0.8.4",
     "@google/cloud-trace": "^0.5.7",
     "body-parser": "^1.15.2",
@@ -36,5 +29,9 @@
     "morgan": "^1.7.0",
     "serve-favicon": "^2.3.0",
     "winston": "^2.2.0"
+  },
+  "engines": {
+    "node": ">=6.6.0",
+    "yarn": "^0.15.1"
   }
 }

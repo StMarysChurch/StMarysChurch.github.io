@@ -5,8 +5,8 @@
       ".write": true
     },
     "schedule": {
-      ".read": "auth.uid === 'my-service-worker'",
-      ".write": false
+      ".read": "auth!=null",
+      ".write": true
     },
     "scheduleUsers": {
       ".read": true,

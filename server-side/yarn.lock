@@ -1082,7 +1082,7 @@ findit@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/findit/-/findit-2.0.0.tgz#6509f0126af4c178551cfa99394e032e13a4d56e"
 
-firebase-tools@^3.0.7:
+firebase-tools:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/firebase-tools/-/firebase-tools-3.0.8.tgz#52e4482fdb98b8a7930b1a6c4ce7bb4769c3d4e1"
   dependencies:

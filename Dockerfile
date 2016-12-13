@@ -31,8 +31,6 @@ ENV PATH="$PATH:/usr/src/app/yarn/bin"
 # Copy app
 COPY restify/ /usr/src/app/
 
-RUN env
-
 # Run app dependencies
 RUN yarn
 

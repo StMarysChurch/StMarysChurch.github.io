@@ -1,0 +1,33 @@
+{
+  "name": "server-side",
+  "version": "1.0.0",
+  "description": "Backend code for Church website.",
+  "main": "bin/www",
+  "repository": {
+    "url": "https://github.com/StMarysChurch/StMarysChurch.github.io",
+    "type": "git"
+  },
+  "author": "Roney Thomas",
+  "license": "MIT",
+  "scripts": {
+    "start": "forever server.js",
+    "deploy": "gcloud app deploy"
+  },
+  "dependencies": {
+    "@google-cloud/logging": "^0.5.1",
+    "@google-cloud/storage": "^0.5.0",
+    "@google/cloud-debug": "^0.9.1",
+    "@google/cloud-trace": "^0.5.10",
+    "cheerio": "^0.22.0",
+    "firebase": "^3.6.3",
+    "firebase-admin": "^4.0.4",
+    "firebase-tools": "^3.2.0",
+    "forever": "^0.15.3",
+    "google-compute-metadata": "^1.2.1",
+    "restify": "^4.3.0"
+  },
+  "engines": {
+    "node": ">=7.2.1",
+    "yarn": "^0.18.0"
+  }
+}

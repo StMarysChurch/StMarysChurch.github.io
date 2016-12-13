@@ -8,7 +8,9 @@ let restify = require('restify');
 
 let gcs;
 if (process.env.NODE_ENV === 'production') {
-    gcs = require('@google-cloud/storage');
+    gcs = require('@google-cloud/storage')({
+        projectId: 'church-tools'
+    });
 } else {
     gcs = require('@google-cloud/storage')({
         projectId: 'church-tools',

@@ -3,7 +3,9 @@ let restify = require('restify');
 let path = require("path");
 
 if (process.env.NODE_ENV === 'production') {
-    logging = require('@google-cloud/logging')();
+    logging = require('@google-cloud/logging')({
+        projectId: 'church-tools'
+    });
 } else {
     logging = require('@google-cloud/logging')({
         projectId: 'church-tools',

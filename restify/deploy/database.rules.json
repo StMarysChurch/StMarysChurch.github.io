@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "lectionary": {
+      ".read": true,
+      ".write": true
+    },
+    "schedule": {
+      ".read": true,
+      ".write": "auth!=null"
+    },
+    "scheduleUsers": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}

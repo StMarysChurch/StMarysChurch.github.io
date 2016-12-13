@@ -18,12 +18,24 @@ RUN echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/reposito
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-# Install app dependencies
-COPY server-side/package.json /usr/src/app/
-RUN npm install
+# Install yarn
+RUN wget https://yarnpkg.com/latest.tar.gz \
+    && mkdir yarn \
+    && tar xvxf latest.tar.gz \
+    && rm -rf latest.tar.gz \
+    && mv dist/* yarn/
 
-# Copy app 
-COPY server-side/ /usr/src/app/
+# Add yarn to path
+ENV PATH="$PATH:/usr/src/app/yarn/bin"
 
+# Copy app
+COPY restify/ /usr/src/app/
+
+RUN env
+
+# Run app dependencies
+RUN yarn
+
+# Expose port and run node app
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "yarn", "run", "start" ]

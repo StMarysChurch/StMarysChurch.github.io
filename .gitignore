@@ -3,7 +3,7 @@ Thumbs.db
 .idea/
 **/node_modules/**
 **/npm-debug.log
-server-side/deploy/hosting/index.html
-server-side/key.json
-server-side/deploy-token.json
+restify/deploy/hosting/index.html
+restify/key.json
+restify/deploy-token.json
 .vscode/launch.json

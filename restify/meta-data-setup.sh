@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-set -v
-
 header='--header=Metadata-Flavor: Google'
 
 id=$(wget -qO- "$header" http://metadata.google.internal/computeMetadata/v1/instance/id)

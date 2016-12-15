@@ -33,7 +33,7 @@ ENV PATH="$PATH:/usr/src/app/yarn/bin"
 COPY restify/ /usr/src/app/
 
 # Set the Stackdriver logging metadata
-RUN /bin/sh -c "source meta-data-setup.sh"
+RUN /bin/sh -c "source metadata-setup.sh"
 
 # Run app dependencies
 RUN yarn

@@ -32,12 +32,9 @@ ENV PATH="$PATH:/usr/src/app/yarn/bin"
 # Copy app
 COPY restify/ /usr/src/app/
 
-# Set the Stackdriver logging metadata
-RUN /bin/sh -c "source metadata-setup.sh"
-
-# Run app dependencies
+# Install app dependencies
 RUN yarn
 
 # Expose port and run node app
 EXPOSE 8080
-CMD [ "yarn", "run", "start" ]
+CMD [ "/bin/sh", "-c", "source start.sh" ]

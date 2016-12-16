@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+alias yarn-exec='PATH=$(yarn bin):$PATH'
+
 header='--header=Metadata-Flavor: Google'
 
 id=$(wget -qO- "$header" http://metadata.google.internal/computeMetadata/v1/instance/id)
@@ -14,4 +16,6 @@ if [ "$id" == '' ]
     echo "Running on GCP"
     printf '{"id":"%s","zone":"%s","project_id":"%s"}\n' "$id" "$zone" "$project_id" > metadata.json
 fi
+
+yarn run start
 

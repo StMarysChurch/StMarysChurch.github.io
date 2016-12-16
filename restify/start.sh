@@ -8,7 +8,7 @@ id=$(wget -qO- "$header" http://metadata.google.internal/computeMetadata/v1/inst
 zone=$(wget -qO- "$header" http://metadata.google.internal/computeMetadata/v1/instance/zone)
 project_id=$(wget -qO- "$header" http://metadata.google.internal/computeMetadata/v1/project/project-id)
 
-if [ "$id" == '' ]
+if [ "$id" = "" ]
   then
 	echo "Using local metadata"
 	printf '{"id":"local","zone":"local-machine","project_id":"church-tools"}\n' > metadata.json
@@ -18,4 +18,3 @@ if [ "$id" == '' ]
 fi
 
 yarn run start
-

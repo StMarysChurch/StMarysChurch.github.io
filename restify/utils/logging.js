@@ -21,9 +21,9 @@ function entry(data) {
 
 function handler(err, apiResponse) {
     if (!err) {
-        console.log("working")
+        console.log("Log success written")
     } else {
-        console.log("not wokring ", err, apiResponse);
+        console.log("Error writing log", err, apiResponse);
     }
 }
 

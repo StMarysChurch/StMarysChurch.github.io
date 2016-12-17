@@ -17,36 +17,41 @@ if (process.env.NODE_ENV === 'production') {
         keyFilename: path.resolve(__dirname, './key.json')
     });
 }
+
 let secrets = gcs.bucket('church-tools.appspot.com');
 let deployToken, serviceAccount;
+
+// Downloading service account credential
 secrets.file('secret/church-tools-key.json').download((err, contents) => {
     if (!err) {
-        // logging.info("index.js ", "deploy-token.json -- Success");
-        // logging.info("index.js church-tools-key.json ", contents.toString());
         serviceAccount = JSON.parse(contents.toString());
-        console.log("sucedkssf key", serviceAccount);
-        // logging.writeLog("roneyoney", function (err, apiResponse) {
-        //     console.log(err, apiResponse);
-        // });
-        //logging.log.info(this.entry("seems like working"), this.handler);
-        logging.log.alert(logging.entry("lksdjksdf"), logging.handler);
+        console.log("church-tools-key.json", serviceAccount);
+        logging.log.info(logging.entry({"server.js": "church-tools-key.json downloaded --Success"}), logging.handler);
     } else {
-        //logging.error("index.js ", "deploy-token.json -- Error ", err);
-        // logging.writeLog("test log", "roney roney", function (err, apiResponse) {
-        //     console.log(apiResponse);
-        // });
+        console.log("Error downloading church-tools-key.json", err);
+        logging.log.alert(logging.entry({
+            "server.js": "church-tools-key.json downloaded --Error",
+            "error": err
+        }), logging.handler);
     }
 });
+
+// Downloading Firebase deploy token
 secrets.file('secret/deploy-token.json').download((err, contents) => {
     if (!err) {
-        // logging.info("app.js ", "deploy-token.json -- Success");
-        // logging.info("app.js deploy-token.json ", contents.toString());
         deployToken = JSON.parse(contents.toString());
-        console.log("sucedkssf deploy token", deployToken);
+        console.log("deploy-token.json", deployToken);
+        logging.log.info(logging.entry({"server.js": "deploy-token.json downloaded --Success"}), logging.handler);
     } else {
-        // logging.error("index.js ", "deploy-token.json -- Error ", err);
+        console.log("Error downloading deploy-token.json", err);
+        logging.log.alert(logging.entry({
+            "server.js": "deploy-token.json downloaded --Error",
+            "error": err
+        }), logging.handler);
     }
 });
+
+// Configuring Firebase credentials
 let config;
 if (process.env.NODE_ENV === 'production') {
     config = {
@@ -65,7 +70,9 @@ if (process.env.NODE_ENV === 'production') {
 admin.initializeApp(config);
 let db = admin.database();
 
-function respond(req, res, next) {
+
+// Renders web page on request
+function render(req, res, next) {
     if (req.params.ref === 'schedule') {
         let ref = db.ref('schedule');
         fs.readFile(path.resolve(__dirname, "./views/index.html"), "utf8", (err, data) => {
@@ -94,10 +101,12 @@ function respond(req, res, next) {
                     token: deployToken.token,
                     cwd: path.resolve(__dirname, "../deploy/")
                 }).then(() => {
-                    logging.info("index.js ", "Firebase Hosting Deployed -- Success");
+                    logging.log.info(logging.entry({"server.js": "Firebase Hosting Deployed --Success"}), logging.handler);
                 }).catch((err) => {
-                    // handle error
-                    logging.error("index.js ", "Firebase Hosting Deployed -- Error " + err);
+                    logging.log.alert(logging.entry({
+                        "server.js": "Firebase Hosting Deployed --Error",
+                        "error": err
+                    }), logging.handler);
                 });
             });
         });
@@ -108,8 +117,8 @@ function respond(req, res, next) {
 }
 
 let server = restify.createServer({name: 'church-api'});
-server.get('/render/:ref', respond);
-server.head('/render/:ref', respond);
+server.get('/render/:ref', render);
+server.head('/render/:ref', render);
 
 server.listen(8080, function () {
     console.log('%s listening at %s', server.name, server.url);

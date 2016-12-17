@@ -6,4 +6,5 @@ Thumbs.db
 restify/deploy/hosting/index.html
 restify/key.json
 restify/deploy-token.json
+restify/metadata.json
 .vscode/launch.json

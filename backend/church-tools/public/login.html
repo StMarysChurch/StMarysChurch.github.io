@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Church Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css"/>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBSOf8JiItDCPdHljNkfpQtiCiTqBKX2vc",
+            authDomain: "church-tools.firebaseapp.com",
+            databaseURL: "https://church-tools.firebaseio.com",
+            storageBucket: "church-tools.appspot.com",
+            messagingSenderId: "902809427512"
+        };
+        firebase.initializeApp(config);
+        window.addEventListener('load', function () {
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    // User is signed in.
+                    window.location = "/admin.html";
+                }
+            }, function (error) {
+                console.log(error);
+            });
+        });
+        // FirebaseUI config.
+        var uiConfig = {
+            signInSuccessUrl: '/admin.html',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID
+            ],
+            // Terms of service url.
+            tosUrl: '<your-tos-url>'
+        };
+
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+</head>
+<body>
+<style>
+    body {
+        margin-top: 25vh;
+        background: #263238;
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+        "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    }
+</style>
+<h1>Sign In</h1>
+<div id="firebaseui-auth-container"></div>
+</body>
+</html>

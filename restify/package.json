@@ -14,10 +14,10 @@
     "deploy": "gcloud app deploy"
   },
   "dependencies": {
-    "@google-cloud/logging": "^0.5.1",
-    "@google-cloud/storage": "^0.5.0",
+    "@google-cloud/logging": "^0.6.1",
+    "@google-cloud/storage": "^0.6.1",
     "@google/cloud-debug": "^0.9.1",
-    "@google/cloud-trace": "^0.5.10",
+    "@google/cloud-trace": "^0.6.1",
     "cheerio": "^0.22.0",
     "firebase": "^3.6.3",
     "firebase-admin": "^4.0.4",

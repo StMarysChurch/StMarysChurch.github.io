@@ -49,25 +49,16 @@
         });
         function notifyNav(nav) {
             sessionStorage.setItem("navChoice", nav);
-            if (nav === 'members') {
-                console.log("AJAX members");
-                fetch('/ajax/fragment/members')
-                    .then(function (response) {
-                        return response.text()
-                    })
-                    .then(function (body) {
-                        document.getElementById("page-content").innerHTML = body;
-                    });
-            } else if (nav === 'addMembers') {
-                console.log("AJAX addMembers");
-                fetch('/ajax/fragment/addMembers')
-                    .then(function (response) {
-                        return response.text()
-                    })
-                    .then(function (body) {
-                        document.getElementById("page-content").innerHTML = body;
-                    });
-            }
+            console.log("AJAX " + nav);
+            fetch('/ajax/fragment/' + nav)
+                .then(function (response) {
+                    return response.text()
+                })
+                .then(function (body) {
+                    document.getElementById("page-content").innerHTML = body;
+                    // Upgrades dynamically added dom to mdl.
+                    componentHandler.upgradeDom();
+                });
         }
     </script>
     <style>

@@ -17,7 +17,7 @@ fs.readdir(path.resolve('views/'), (err, files) => {
 /* GET fragments based on elements parameter.
  * https://expressjs.com/en/guide/routing.html#route-parameters*/
 router.get('/fragment/:element', function (req, res, next) {
-    res.send(partialsMap.get(req.param('element') + '.html'));
+    res.send(partialsMap.get(req.params.element + '.html'));
 });
 
 module.exports = router;

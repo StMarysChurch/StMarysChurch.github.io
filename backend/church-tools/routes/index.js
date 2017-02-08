@@ -16,6 +16,63 @@ router.get('/donors', function (req, res, next) {
             "body": {
                 "page-content":`<script>
 firebase.database.enableLogging(true);
+</script>
+<h3>Donors</h3><div class="mdl-grid">
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Name</th>
+      <th class="mdl-data-table__cell--non-numeric">Email</th>
+      <th>Phone N.O</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+      <td>25</td>
+      <td>$2.90</td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+      <td>50</td>
+      <td>$1.25</td>
+    </tr>
+    <tr>
+      <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+      <td>10</td>
+      <td>$2.35</td>
+    </tr>
+  </tbody>
+</table>
+<script>
+let tableBody =  document.getElementById('tableBody');
+firebase.database().ref('donors').once('value', function(snapshot) {
+  for (var x = 0, y = childSnapshot.val().events.length; x < y; x++) {
+                console.log(childSnapshot.val().times[x] + ":", childSnapshot.val().events[x]);
+                var event = childSnapshot.val().times[x] + ": " + childSnapshot.val().events[x] + "<br>";
+                scheduleElement.insertAdjacentHTML('beforeend', event);
+            }
+});
+</script>
+                </div>`
+            },
+            "foot": "<script>componentHandler.upgradeDom();</script>"
+        });
+    } else {
+        // Send the whole page
+        res.send();
+    }
+});
+
+router.get('/addDonor', function (req, res, next) {
+    if (req.query.spf==='navigate'){
+        console.log("Seems like working");
+        res.type('json');
+        res.json({
+            "title": "Add Donor",
+            "body": {
+                "page-content":`<script>
+firebase.database.enableLogging(true);
 function submitFirebase() {
     var myForm = document.getElementById("donorForm");
   for (var i = 0; i < myForm.elements.length; i++) {

@@ -7,6 +7,7 @@ router.get('/', function (req, res, next) {
     res.sendFile('login.html', {root: './public'});
 });
 
+/* Get donor page. */
 router.get('/donors', function (req, res, next) {
     if (req.query.spf==='navigate'){
         console.log("Seems like working");

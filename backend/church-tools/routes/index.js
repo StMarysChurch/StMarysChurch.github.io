@@ -28,36 +28,20 @@ firebase.database.enableLogging(true);
     </tr>
   </thead>
   <tbody id="tableBody">
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-      <td>25</td>
-      <td>$2.90</td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-      <td>50</td>
-      <td>$1.25</td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-      <td>10</td>
-      <td>$2.35</td>
-    </tr>
   </tbody>
 </table>
-<script>
-let tableBody =  document.getElementById('tableBody');
-firebase.database().ref('donors').once('value', function(snapshot) {
-  for (var x = 0, y = childSnapshot.val().events.length; x < y; x++) {
-                console.log(childSnapshot.val().times[x] + ":", childSnapshot.val().events[x]);
-                var event = childSnapshot.val().times[x] + ": " + childSnapshot.val().events[x] + "<br>";
-                scheduleElement.insertAdjacentHTML('beforeend', event);
-            }
-});
-</script>
                 </div>`
             },
-            "foot": "<script>componentHandler.upgradeDom();</script>"
+            "foot": `<script>componentHandler.upgradeDom();
+firebase.database().ref('donors').once('value', function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {
+    let tableRow = '<tr><td class="mdl-data-table__cell--non-numeric">'+childSnapshot.val().name+'</td>'+
+    '<td class="mdl-data-table__cell--non-numeric">'+childSnapshot.val().email+'</td>'+
+    '<td>'+childSnapshot.val().phoneNo+'</td></tr>';
+    document.getElementById('tableBody').insertAdjacentHTML('beforeend', tableRow);
+  });
+});
+</script>`
         });
     } else {
         // Send the whole page

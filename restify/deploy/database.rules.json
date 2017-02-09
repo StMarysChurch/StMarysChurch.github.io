@@ -1,5 +1,9 @@
 {
   "rules": {
+    "donors": {
+      ".read": true,
+      ".write": "auth!=null"
+    },
     "lectionary": {
       ".read": true,
       ".write": true

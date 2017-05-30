@@ -6,7 +6,7 @@
     },
     "lectionary": {
       ".read": true,
-      ".write": true
+      ".write": "auth!=null"
     },
     "schedule": {
       ".read": true,
@@ -14,7 +14,7 @@
     },
     "scheduleUsers": {
       ".read": true,
-      ".write": true
+      ".write": "auth!=null"
     }
   }
 }

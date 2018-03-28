@@ -1,5 +1,5 @@
 {
   "projects": {
-    "production": "church-tools"
+    "default": "church-tools"
   }
 }

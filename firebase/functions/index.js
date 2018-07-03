@@ -13,6 +13,7 @@ exports.dailyClean = functions.pubsub.topic('daily-tick').onPublish((event) => {
             if (childSnapshot.val().expiryDate + (1000 * 60 * 60 * 24) < Date.now()) {
                 console.log("Deleting child ", childSnapshot.val().title);
                 ref.child(childSnapshot.key).remove();
+                return null;
             }
         });
     });

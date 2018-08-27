@@ -7,3 +7,4 @@ restify/key.json
 restify/deploy-token.json
 restify/metadata.json
 .vscode/launch.json
+package-lock.json

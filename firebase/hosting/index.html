@@ -189,7 +189,10 @@
             <div class="grid_4">
                 <div class="home_widget">
                     <h3>Upcoming Events </h3>
-                    <b><a href="HolyWeek2019.pdf">Passion Week Schedule</a></b>
+                    <b style="color: #9f1d35;">Due to COVID-19 all in church service's are cancelled. </b><br/>
+                    <b>But we are live streaming Holy Qurbana every Sunday on <a href="https://www.youtube.com/channel/UC0YE2UB-KmKeay64EmBM7Ew">Youtube</a> </b>
+                    <script src="https://apis.google.com/js/platform.js"></script>
+                    <div class="g-ytsubscribe" data-channelid="UC0YE2UB-KmKeay64EmBM7Ew" data-layout="full" data-count="hidden"></div>
                     <div id="upcoming_events">
                     </div>
                 </div>
@@ -271,40 +274,40 @@
         return"function"==typeof a.onpushstate&&a.onpushstate({state:k}),h(),j.apply(a,arguments)},h()})
     (window.history,"UA-30505137-1",{anonymizeIp:!0,colorDepth:!0,characterSet:!0,screenSize:!0,language:!0});
 </script>
-<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-database.js"></script>
-<script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyBSOf8JiItDCPdHljNkfpQtiCiTqBKX2vc",
-        authDomain: "church-tools.firebaseapp.com",
-        databaseURL: "https://church-tools.firebaseio.com"
-    };
-    firebase.initializeApp(config);
-    // Get a reference to the database service
-    // Get a reference to the database service
-    var database = firebase.database();
-    var ref = database.ref('schedule');
-    ref.once('value', function (snapshot) {
-        snapshot.forEach(function (childSnapshot) {
-            console.log(childSnapshot);
-            console.log(childSnapshot.val().title);
-            var scheduleElement = document.getElementById('upcoming_events');
-            var title = "<b>" + childSnapshot.val().title + "</b><br>";
-            scheduleElement.insertAdjacentHTML('beforeend', title);
-            for (var x = 0, y = childSnapshot.val().events.length; x < y; x++) {
-                console.log(childSnapshot.val().times[x] + ":", childSnapshot.val().events[x]);
-                if (childSnapshot.val().times[x] === "") {
-                    var event = "<b><a href='" + childSnapshot.val().link[x] + "'>" + childSnapshot.val().events[x] + "</a></b><br>";
-                } else {
-                    var event = childSnapshot.val().times[x] + ": " + childSnapshot.val().events[x] + "<br>";
-                }
-                scheduleElement.insertAdjacentHTML('beforeend', event);
-            }
-        });
-    });
+<!--<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>-->
+<!--<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-database.js"></script>-->
+<!--<script>-->
+<!--    // Initialize Firebase-->
+<!--    var config = {-->
+<!--        apiKey: "AIzaSyBSOf8JiItDCPdHljNkfpQtiCiTqBKX2vc",-->
+<!--        authDomain: "church-tools.firebaseapp.com",-->
+<!--        databaseURL: "https://church-tools.firebaseio.com"-->
+<!--    };-->
+<!--    firebase.initializeApp(config);-->
+<!--    // Get a reference to the database service-->
+<!--    // Get a reference to the database service-->
+<!--    var database = firebase.database();-->
+<!--    var ref = database.ref('schedule');-->
+<!--    ref.once('value', function (snapshot) {-->
+<!--        snapshot.forEach(function (childSnapshot) {-->
+<!--            console.log(childSnapshot);-->
+<!--            console.log(childSnapshot.val().title);-->
+<!--            var scheduleElement = document.getElementById('upcoming_events');-->
+<!--            var title = "<b>" + childSnapshot.val().title + "</b><br>";-->
+<!--            scheduleElement.insertAdjacentHTML('beforeend', title);-->
+<!--            for (var x = 0, y = childSnapshot.val().events.length; x < y; x++) {-->
+<!--                console.log(childSnapshot.val().times[x] + ":", childSnapshot.val().events[x]);-->
+<!--                if (childSnapshot.val().times[x] === "") {-->
+<!--                    var event = "<b><a href='" + childSnapshot.val().link[x] + "'>" + childSnapshot.val().events[x] + "</a></b><br>";-->
+<!--                } else {-->
+<!--                    var event = childSnapshot.val().times[x] + ": " + childSnapshot.val().events[x] + "<br>";-->
+<!--                }-->
+<!--                scheduleElement.insertAdjacentHTML('beforeend', event);-->
+<!--            }-->
+<!--        });-->
+<!--    });-->
 
-</script>
+<!--</script>-->
 </body>
 
 </html>

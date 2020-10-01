@@ -3,8 +3,4 @@ Thumbs.db
 .idea/
 **/node_modules/**
 **/npm-debug.log
-restify/key.json
-restify/deploy-token.json
-restify/metadata.json
-.vscode/launch.json
 package-lock.json

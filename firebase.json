@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "church-website",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

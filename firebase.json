@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "church-website",
+    "public": "church-website/static",
     "ignore": [
       "firebase.json",
       "**/.*",

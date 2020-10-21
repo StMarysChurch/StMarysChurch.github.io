@@ -20,7 +20,6 @@
     <script type='text/javascript' src="js/jquery.2.0.3.min.js"></script>
     <script type="text/javascript" src="js/jquery.slider.min.js"></script>
     <script type="text/javascript" src="js/custom.min.js"></script>
-    <meta name="generator" content="Salty Dogs V5 Developed by Roney Thomas on Ubuntu"/>
 </head>
 
 <body class="home blog">
@@ -92,14 +91,6 @@
                         <li id="menu-item-38"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a
                                 href="//stmarysorthodoxchurch.ca/new-comers.html">NEW COMERS</a>
-                        </li>
-                        <li id="menu-item-39"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a
-                                href="//stmarysorthodoxchurch.ca/church-calendar.html">CHURCH CALENDAR</a>
-                        </li>
-                        <li id="menu-item-40"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a
-                                href="//stmarysorthodoxchurch.ca/fundraising.html">FUNDRAISING</a>
                         </li>
                     </ul>
                 </div>
@@ -247,67 +238,9 @@
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a
                     href="//stmarysorthodoxchurch.ca/new-comers.html">NEW COMERS</a>
             </li>
-            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a
-                    href="//stmarysorthodoxchurch.ca/church-calendar.html">CHURCH CALENDAR</a>
-            </li>
         </ul>
     </div>
 </div>
-<script>
-    (function(a,b,c){var d=function(k){var m,n,l=window.location.search.substring(1),
-        o=l.split("&");for(m=0;m<o.length;m++)if(n=o[m].split("="),n[0]==k)
-            return n[1]||void 0},e=function(){return"_"+Math.random().toString(36).substr(2,9)},
-        f=function(){return localStorage.cid||(localStorage.cid=e()),localStorage.cid},
-        g=function(k){var l=[];for(var m in k)k.hasOwnProperty(m)&&void 0!==k[m]&&
-        l.push(encodeURIComponent(m)+"="+encodeURIComponent(k[m]));return l.join("&")},
-        h=function(){setTimeout(function(){var l={v:"1",aip:c.anonymizeIp?1:void 0,tid:b,
-            cid:f(),t:"pageview",sd:c.colorDepth&&screen.colorDepth?screen.colorDepth+"-bits":void 0,
-            dr:d("ref"),dt:document.title,dl:document.location.origin+
-                document.location.pathname+document.location.search,
-            ul:c.language?(navigator.language||"").toLowerCase():void 0,
-            de:c.characterSet?document.characterSet:void 0,sr:c.screenSize?
-                (window.screen||{}).width+"x"+(window.screen||{}).height:void 0,
-            vp:c.screenSize&&window.visualViewport?(window.visualViewport||{}).width+"x"+
-                (window.visualViewport||{}).height:void 0},k=new XMLHttpRequest;
-            k.open("GET","https://www.google-analytics.com/collect?"+g(l)+"&z="+Math.random(),!0),
-                k.send(null)},10)},j=a.pushState;a.pushState=function(k){
-        return"function"==typeof a.onpushstate&&a.onpushstate({state:k}),h(),j.apply(a,arguments)},h()})
-    (window.history,"UA-30505137-1",{anonymizeIp:!0,colorDepth:!0,characterSet:!0,screenSize:!0,language:!0});
-</script>
-<!--<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>-->
-<!--<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-database.js"></script>-->
-<!--<script>-->
-<!--    // Initialize Firebase-->
-<!--    var config = {-->
-<!--        apiKey: "AIzaSyBSOf8JiItDCPdHljNkfpQtiCiTqBKX2vc",-->
-<!--        authDomain: "church-tools.firebaseapp.com",-->
-<!--        databaseURL: "https://church-tools.firebaseio.com"-->
-<!--    };-->
-<!--    firebase.initializeApp(config);-->
-<!--    // Get a reference to the database service-->
-<!--    // Get a reference to the database service-->
-<!--    var database = firebase.database();-->
-<!--    var ref = database.ref('schedule');-->
-<!--    ref.once('value', function (snapshot) {-->
-<!--        snapshot.forEach(function (childSnapshot) {-->
-<!--            console.log(childSnapshot);-->
-<!--            console.log(childSnapshot.val().title);-->
-<!--            var scheduleElement = document.getElementById('upcoming_events');-->
-<!--            var title = "<b>" + childSnapshot.val().title + "</b><br>";-->
-<!--            scheduleElement.insertAdjacentHTML('beforeend', title);-->
-<!--            for (var x = 0, y = childSnapshot.val().events.length; x < y; x++) {-->
-<!--                console.log(childSnapshot.val().times[x] + ":", childSnapshot.val().events[x]);-->
-<!--                if (childSnapshot.val().times[x] === "") {-->
-<!--                    var event = "<b><a href='" + childSnapshot.val().link[x] + "'>" + childSnapshot.val().events[x] + "</a></b><br>";-->
-<!--                } else {-->
-<!--                    var event = childSnapshot.val().times[x] + ": " + childSnapshot.val().events[x] + "<br>";-->
-<!--                }-->
-<!--                scheduleElement.insertAdjacentHTML('beforeend', event);-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-
-<!--</script>-->
 </body>
 
 </html>

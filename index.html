@@ -104,26 +104,9 @@
                                         <li>
                                             <div class="slide">
                                                 <script type="text/javascript">
-                                                    var now = new Date();
-                                                    var today = now.getDay();
-                                                    var startTime = new Date();
-                                                    startTime.setHours(08);
-                                                    startTime.setMinutes(23);
-                                                    startTime.setSeconds(00);
-                                                    var endTime = new Date();
-                                                    endTime.setHours(14);
-                                                    endTime.setMinutes(43);
-                                                    endTime.setSeconds(00);
-
-                                                    if (today > 0 && today < 6) {
-                                                        if (startTime < now && endTime > now) {
-                                                            document.write('<img width="924" height="345" src="img/Toronto-Skyline-Panorama.jpg" loading="lazy">');
-                                                        }
-                                                        else {
-                                                            document.write('<img width="924" height="345" src="img/torontoSkylinePanoramaDay.jpg" loading="lazy">');
-                                                        }
-                                                    }
-                                                    else {
+                                                    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                                                        document.write('<img width="924" height="345" src="img/Toronto-Skyline-Panorama.jpg" loading="lazy">');
+                                                    } else {
                                                         document.write('<img width="924" height="345" src="img/torontoSkylinePanoramaDay.jpg" loading="lazy">');
                                                     }
                                                 </script>
@@ -165,10 +148,8 @@
                 <div class="home_widget">
                     <h3>Upcoming Events </h3>
                     <b>Due to COVID-19 our church service is restricted.</b><br/>
-                    If you are interested in attending in person, please email <a href="mailto:service@stmarysorthodoxchurch.ca?subject=Interested in atending service">service@stmarysorthodoxchurch.ca</a><br/>  
+                    If you are interested in attending in person, please email <a href="mailto:service@stmarysorthodoxchurch.ca?subject=Interested in atending service"><b>service@stmarysorthodoxchurch.ca</b></a><br/>  
                     <b>We are also live streaming Holy Qurbana every Sunday on <a href="https://www.youtube.com/channel/UC0YE2UB-KmKeay64EmBM7Ew">Youtube</a> </b>
-                    <script src="https://apis.google.com/js/platform.js"></script>
-                    <div class="g-ytsubscribe" data-channelid="UC0YE2UB-KmKeay64EmBM7Ew" data-layout="full" data-count="hidden"></div>
                     <div id="upcoming_events">
                     </div>
                 </div>
@@ -216,9 +197,6 @@
         <ul id="menu-menu-1" class="footer_nav">
             <li class="first menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-32">
                 <a href="//stmarysorthodoxchurch.ca">HOME</a>
-            </li>
-            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a
-                    href="//stmarysorthodoxchurch.ca/about-us.html">ABOUT US</a>
             </li>
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a
                     href="//stmarysorthodoxchurch.ca/our-vision.html">OUR VISION</a>

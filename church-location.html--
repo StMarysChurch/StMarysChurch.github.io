@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8"/>
-    <title>CHURCH UPDATES | St. Mary&#039;s Malankara Orthodox Syrian Church of Toronto</title>
-    <meta name="description" content="Church Updates">
+    <title>CHURCH LOCATION | St. Mary&#039;s Malankara Orthodox Syrian Church of Toronto</title>
+    <meta name="description" content="Church Location">
     <meta name="keywords"
           content="Malankara Orthodox, Syrian, Church, Keralite, Malayali,Toronto, Scarborough, Markham, Ajax, Mississauga, Brampton">
     <META NAME="robots" CONTENT="index follow">
@@ -16,11 +16,13 @@
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <script type='text/javascript' src="js/jquery.2.0.3.min.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
-    <link rel='prev' title='CHURCH CALENDAR' href='//stmarysorthodoxchurch.ca/church-calendar.html'/>
-    <link rel='canonical' href='//stmarysorthodoxchurch.ca/church-updates.html'/>
+    <link rel='prev' title='OUR VICAR' href='//stmarysorthodoxchurch.ca/about-us/our-vicar.html'/>
+    <link rel='next' title='CONTACT US' href='//stmarysorthodoxchurch.ca/about-us/contact-us.html'/>
+    <link rel='canonical' href='//stmarysorthodoxchurch.ca/about-us/church-location.html'/>
 </head>
 
-<body class="page page-id-124 page-template-default">
+
+<body class="page page-id-12 page-child parent-pageid-5 page-template-default">
 <div id="wrapper">
     <div id="wrapper2">
         <div id="header" class="container_12">
@@ -82,21 +84,22 @@
         <div id="ribbon" class="page">
             <div class="container_12 content">
                 <div class="grid_12 alpha">
-                    <h1>CHURCH UPDATES</h1>
+                    <h1>CHURCH LOCATION</h1>
                 </div>
             </div>
         </div>
         <div id="wrapper3" class="container_12">
             <div id="content" class="grid_8 alpha">
-                <p>
-                    <iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFVHNG41ZUR5b09pTW9sT1d2QTZYTVE6MQ"
-                            width="760" height="625" frameborder="0" marginheight="0" marginwidth="0">
-                        Loading&#8230;</iframe>
-                </p>
+                <p>Location: 9-170 Fuller Road, Ajax ON &#8211; L1S 7G8
+                    <br/>
+
+                    <iframe width="941" height="450" frameborder="0" style="border:0"
+                            src="https://www.google.com/maps/embed/v1/directions?origin=My location&destination=place_id:EiMxNzAgRnVsbGVyIFJkLCBBamF4LCBPTiBMMVMsIENhbmFkYQ&key=AIzaSyChoxDUwoZ4sqRT4fwkan8CHr44CfZ_Vy4"
+                            allowfullscreen></iframe>
+                    <br/>
+                    <a href="//stmarysorthodoxchurch.ca/contact-us.html">Contact Us</a></p>
 
 
-            </div>
-            <div id="sidebar" class="grid_4 omega">
             </div>
         </div>
         <div class="push2"></div>
@@ -116,15 +119,15 @@
     </div>
     <div id="footer" class="container_12">
         <div class="grid_5 alpha">
-            <p>Copyright © 2021 St. Mary's Malankara Orthodox Syrian Church of Toronto
+            <p>Copyright © 2020 St. Mary's Malankara Orthodox Syrian Church of Toronto
                 <br/>
         </div>
         <ul id="menu-menu-1" class="footer_nav">
             <li class="first menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-32"><a
                     href="//stmarysorthodoxchurch.ca">HOME</a>
             </li>
-            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a
-                    href="//stmarysorthodoxchurch.ca/about-us.html">ABOUT US</a>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-26">
+                <a href="//stmarysorthodoxchurch.ca/about-us.html">ABOUT US</a>
             </li>
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a
                     href="//stmarysorthodoxchurch.ca/our-vision.html">OUR VISION</a>

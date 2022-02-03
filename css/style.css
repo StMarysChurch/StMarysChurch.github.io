@@ -256,7 +256,6 @@ button:active,
 	float:left;
 	list-style:none;
 	margin-left:0;
-	zoom:1;
 }
 .navbar ul li.last {
 	background:none;

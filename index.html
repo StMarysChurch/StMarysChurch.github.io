@@ -151,17 +151,21 @@
         </div>
     </div>
     <script>
-        var slider = tns({
-            container: '.my-slider',
-            items: 1,
-            slideBy: 'page',
-            autoplay: true,
-            mouseDrag: true,
-            swipeAngle: false,
-            speed: 600,
-            controls: false,
-            autoplayButtonOutput: false,
-            nav: false
+        document.addEventListener('readystatechange', event => { 
+            if (event.target.readyState === "complete") {
+                var slider = tns({
+                    container: '.my-slider',
+                    items: 1,
+                    slideBy: 'page',
+                    autoplay: true,
+                    mouseDrag: true,
+                    swipeAngle: false,
+                    speed: 600,
+                    controls: false,
+                    autoplayButtonOutput: false,
+                    nav: false
+                });
+            }
         });
     </script>
 </body>

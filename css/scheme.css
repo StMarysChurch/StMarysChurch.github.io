@@ -3,7 +3,14 @@
 }
 
 #header .logo a {
-	background:url(../img/church-front.png) no-repeat;
+	background-image: -webkit-image-set(
+    url("../img/front-logo-1x.webp") 1x,
+		url("../img/front-logo-2x.webp") 2x
+	);
+	background-image:image-set(
+		url("../img/front-logo-1x.webp") 1x,
+		url("../img/front-logo-2x.webp") 2x
+	);
 	width:941px;
 	height:71px;
 }
